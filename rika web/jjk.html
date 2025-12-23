@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المود - RIKA OFF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="/img/rikalogo.png">
+    <style>
+        :root {
+            --bg-color: #0f0f15;
+            --card-bg: #1a1a24;
+            --primary: #6c5ce7;
+            --accent: #00cec9;
+            --text-color: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; text-decoration: none; }
+        body { background-color: var(--bg-color); color: var(--text-color); }
+
+        .navbar { background: #15151e; padding: 15px; text-align: center; border-bottom: 2px solid var(--primary); }
+        .nav-link { color: white; font-weight: bold; margin: 0 10px; }
+
+        /* --- تنسيق صفحة المحتوى --- */
+        .content-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .post-title { font-size: 28px; margin-bottom: 20px; color: var(--accent); text-align: center; }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 2px solid #333;
+        }
+        .video-container iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .description { font-size: 16px; line-height: 1.8; color: #ddd; margin-bottom: 30px; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; }
+
+        /* --- زر التحميل والعداد --- */
+        .download-section { text-align: center; padding: 20px; background: rgba(108, 92, 231, 0.1); border-radius: 10px; border: 1px dashed var(--primary); }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), #4834d4);
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .download-btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(108, 92, 231, 0.6); }
+
+        .counter-box { margin-top: 15px; font-size: 14px; color: #aaa; }
+        .counter-number { color: var(--accent); font-weight: bold; font-size: 18px; }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-link"><i class="fas fa-home"></i> العودة للرئيسية</a>
+    </nav>
+
+    <div class="content-container">
+        <h1 class="post-title"> مود جوجيتسو كايزن </h1>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/5cfv7YkR-KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="description">
+            <h3>وصف المود:</h3>
+            <p> يضيف مود جوجيتسو كايزن إلى لعبة ماينكرافت تجربة قتالية مستوحاة من عالم أنمي جوجيتسو كايزن يقدّم المود تقنيات جوجيتسو خاصة، وقدرات فريدة مستوحاة من شخصيات الأنمي، إضافة إلى أعداء وزعماء أقوياء بأساليب قتال مميزة. كما يتيح استخدام مهارات قتالية متنوعة تضيف عمقًا وتشويقًا إلى أسلوب اللعب
+                  <br>
+            <p>المميزات:</p>
+            <ul>
+                <p>- اضافات هائلة من الأنمي للعبة</p>
+                <p>- يدعم اللعب الفردي والجماعي</p>
+                <p>- متوافق مع آخر تحديث للجوال.</p>
+            </ul>
+        </div>
+
+        <div class="download-section">
+            <p style="margin-bottom:15px;">اضغط في الأسفل للتحميل</p>
+            
+            <a href="https://lockedapp.org/cl/i/gr6dg3
+" target="_blank" class="download-btn" onclick="incrementCounter()">
+                <i class="fas fa-download"></i> تحميل المود الآن
+            </a>
+
+            <div class="counter-box">
+                عدد مرات التحميل: <span id="countDisplay" class="counter-number">122</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // كود بسيط لزيادة العداد عند الضغط
+        function incrementCounter() {
+            var display = document.getElementById('countDisplay');
+            // نأخذ الرقم الحالي ونزيل الفواصل
+            var current = parseInt(display.innerText.replace(/,/g, ''));
+            // نضيف 1
+            var newVal = current + 1;
+            // نعيد تنسيق الرقم ونعرضه
+            display.innerText = newVal.toLocaleString();
+            
+            // ملاحظة: هذا التغيير سيظهر لك فقط، لحفظ العدد للجميع تحتاج برمجة PHP وقاعدة بيانات
+        }
+    </script>
+
+ <footer style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+        <p>جميع الحقوق محفوظة &copy; 2025 RIKA OFF</p>
+    </footer>
+</body>
+</html>
