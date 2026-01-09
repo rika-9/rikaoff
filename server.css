@@ -226,6 +226,66 @@
             color: var(--primary);
         }
 
+              /* تنسيق معرض الصور */
+        .gallery-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
+            cursor: grab;
+            user-select: none;
+        }
+        /* تخصيص شريط التمرير */
+        .gallery-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        .gallery-slider::-webkit-scrollbar-thumb {
+            background: #6c5ce7;
+            border-radius: 4px;
+        }
+        .gallery-slider::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .gallery-slider.active {
+            cursor: grabbing;
+            scroll-snap-type: none;
+        }
+        .gallery-img {
+            min-width: 280px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #333;
+            transition: 0.3s;
+            scroll-snap-align: start;
+            -webkit-user-drag: none;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            border-color: #6c5ce7;
+        }
+        /* تنسيق قسم الشرح */
+        .tutorial-step {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .tutorial-step h3 {
+            color: #00d2ff;
+            margin-bottom: 10px;
+        }
+        .tutorial-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #333;
+        }
+
         /* --- CTA Button --- */
         .cta-container {
             text-align: center;
