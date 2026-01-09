@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="server.css">
     <link rel="icon" href="/img/rikalogo.png">
+    <style>
+  
+    </style>
 </head>
 <body>
 
@@ -56,7 +59,34 @@
         <section class="card">
             <h2 class="section-title"><i class="fab fa-youtube"></i> كيفية الدخول للسيرفر </h2>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/PvUJ3rUqXgA" title="Minecraft Server Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/xM0c23s9t7I" title="Minecraft Server Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="tutorial-container">
+                <div class="tutorial-step">
+                    <h3>أخد مفتاح السيرفر</h3>
+                    <p>قم بانجاز احد المهمات لأخد رابط المفتاح</p>
+                    <!-- يمكنك وضع رابط الصورة هنا -->
+                    <img src="/img/join 1.png" class="tutorial-img" alt="صورة الخطوة 1"  height=" 500px">
+                </div>
+
+                <div class="tutorial-step">
+                    <h3>2. اخد رتبة السيرفر بالدسكورد</h3>
+                    <p> قم بالتقديم على السيرفر في الدسكورد </p> 
+                    <!-- مثال لصورة (يمكنك تفعيلها) -->
+                    <!-- <img src="/img/op.jpg" class="tutorial-img" alt="صورة الخطوة 2"> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-camera"></i> صور من داخل السيرفر</h2>
+            <div class="gallery-slider">
+                <!-- يمكنك استبدال مسار الصور أدناه بالصور الخاصة بك -->
+                <img src="/img/server 1.png" alt="صورة من السيرفر 1" class="gallery-img">
+                <img src="/img/server 2.png" alt="صورة من السيرفر 2" class="gallery-img">
+                <img src="/img/server 3.png" alt="صورة من السيرفر 3" class="gallery-img">
+                <img src="/img/server 4.png" alt="صورة من السيرفر 2" class="gallery-img">
             </div>
         </section>
 
@@ -91,5 +121,36 @@
         <p>جميع الحقوق محفوظة &copy; 2025 RIKA OFF</p>
     </footer>
 
+    <script>
+        const slider = document.querySelector('.gallery-slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // سرعة التمرير
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
 </body>
 </html>
